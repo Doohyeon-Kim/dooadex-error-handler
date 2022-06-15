@@ -1,7 +1,7 @@
 // ignore: depend_on_referenced_packages
 import 'package:dooadex_logger/dooadex_logger.dart';
 
-import '../../dooadex_error_handler.dart';
+import '../error/dooadex_error.dart';
 import 'dooadex_exception_factory.dart';
 
 class DooadexException implements Exception {

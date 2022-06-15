@@ -8,12 +8,12 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  dooadex_logger: ^0.0.2
+  dooadex_constants: ^0.0.2
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  dooadex_logger: ^0.0.2
-  dooadex_constants: ^0.0.2
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0

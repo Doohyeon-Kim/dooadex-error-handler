@@ -1,4 +1,7 @@
-import '../../dooadex_error_handler.dart';
+
+import '../error/dooadex_errors.dart';
+import '../error_message_handler/error_message_handler.dart';
+import 'dooadex_exception.dart';
 
 class ConflictException extends DooadexException {
   @override
