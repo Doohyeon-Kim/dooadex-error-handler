@@ -1,7 +1,7 @@
 name: dooadex_error_handler
-description: A new Flutter package project.
+description: A useful error handler
 version: 0.0.1
-repository:
+repository: "https://github.com/Doohyeon-Kim/dooadex-error-handler.git"
 
 environment:
   sdk: ">=2.17.0 <3.0.0"
