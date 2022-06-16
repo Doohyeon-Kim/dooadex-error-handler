@@ -18,5 +18,19 @@ class DooadexException implements Exception {
     DooadexLogger.exception(methodCount: 10, dooadexException);
   }
 
+  factory DooadexException.userInputError() = UserInputErrorException;
+
+  factory DooadexException.invalidFormat() = InvalidFormatException;
+
+  factory DooadexException.badRequest() = BadRequestException;
+
+  factory DooadexException.unauthorized() = UnauthorizedException;
+
+  factory DooadexException.forbidden() = ForbiddenException;
+
+  factory DooadexException.notFound() = NotFoundException;
+
   factory DooadexException.conflict() = ConflictException;
+
+  factory DooadexException.requestTimeout() = RequestTimeoutException;
 }

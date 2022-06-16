@@ -56,14 +56,14 @@ packages:
       name: dooadex_constants
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.2"
+    version: "0.0.3"
   dooadex_error_handler:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.3"
   dooadex_logger:
     dependency: "direct main"
     description:
