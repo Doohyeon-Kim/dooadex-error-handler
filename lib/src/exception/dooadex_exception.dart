@@ -15,7 +15,7 @@ class DooadexException implements Exception {
   }
 
   void logger(Exception dooadexException) {
-    DooadexLogger.exception(methodCount: 10, dooadexException);
+    DooadexLogger.exception(errorMethodCount: 10, dooadexException);
   }
 
   factory DooadexException.userInputError() = UserInputErrorException;
@@ -33,4 +33,13 @@ class DooadexException implements Exception {
   factory DooadexException.conflict() = ConflictException;
 
   factory DooadexException.requestTimeout() = RequestTimeoutException;
+
+  factory DooadexException.internalServerError() = InternalServerErrorException;
+
+  factory DooadexException.serviceUnavailable() = ServiceUnavailableException;
+
+  factory DooadexException.unknownError() = UnknownErrorException;
+
+  factory DooadexException.unstableNetwork() = UnstableNetworkException;
+
 }

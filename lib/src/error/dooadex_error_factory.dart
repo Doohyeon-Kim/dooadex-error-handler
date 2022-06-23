@@ -5,12 +5,20 @@ import 'dooadex_errors.dart';
 
 class UserInputError extends DooadexErrors {
   UserInputError({String? type, String? message, String? title, String? detail})
-      : super(type: type ?? ErrorType.client.userInputError, message: message ?? "", title: title ?? "", detail: detail ?? "");
+      : super(
+            type: type ?? ErrorType.client.userInputError,
+            message: message ?? "",
+            title: title ?? "",
+            detail: detail ?? "");
 }
 
 class InvalidFormat extends DooadexErrors {
   InvalidFormat({String? type, String? message, String? title, String? detail})
-      : super(type: type ?? ErrorType.client.invalidFormat, message: message ?? "", title: title ?? "", detail: detail ?? "");
+      : super(
+            type: type ?? ErrorType.client.invalidFormat,
+            message: message ?? "Invalid Format",
+            title: title ?? "Invalid Format",
+            detail: detail ?? "It's invalid format. Please check your input.");
 }
 
 class BadRequest extends DooadexErrors {
@@ -60,42 +68,60 @@ class Conflict extends DooadexErrors {
             message: message ??
                 "The request could not be completed due to a conflict with the current state of the resource. Whenever a resource conflict would be caused by fulfilling the request.",
             title: title ?? HttpStatus.reason.conflict,
-            detail: detail ?? "");
+            detail: detail ??
+                "That request is a conflicting request.\nPlease change the data and try again.");
 }
 
 class RequestTimeout extends DooadexErrors {
   RequestTimeout({String? type, String? message, String? title, String? detail})
       : super(
             type: type ?? ErrorType.http.requestTimeout,
-            message: message ?? "The client did not produce a request within the time that the server was prepared to wait.",
+            message: message ??
+                "The client did not produce a request within the time that the server was prepared to wait.",
             title: title ?? HttpStatus.reason.requestTimeout,
             detail: detail ?? "");
 }
 
 class InternalServerError extends DooadexErrors {
-  InternalServerError({String? type, String? message, String? title, String? detail})
+  InternalServerError(
+      {String? type, String? message, String? title, String? detail})
       : super(
             type: type ?? ErrorType.http.internalServerError,
-            message: message ?? "",
+            message: message ??
+                "A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.",
             title: title ?? HttpStatus.reason.internalServerError,
-            detail: detail ?? "");
+            detail: detail ??
+                "There was a problem with the server. Please send a report.");
 }
 
 class ServiceUnavailable extends DooadexErrors {
-  ServiceUnavailable({String? type, String? message, String? title, String? detail})
+  ServiceUnavailable(
+      {String? type, String? message, String? title, String? detail})
       : super(
             type: type ?? ErrorType.http.serviceUnavailable,
-            message: message ?? "",
+            message: message ??
+                "The server cannot handle the request (because it is overloaded or down for maintenance). Generally, this is a temporary state.",
             title: title ?? HttpStatus.reason.serviceUnavailable,
-            detail: detail ?? "");
+            detail: detail ??
+                "There was a problem with the server temporarily. Please try again later.");
 }
 
 class UnknownError extends DooadexErrors {
   UnknownError({String? type, String? message, String? title, String? detail})
-      : super(type: type ?? ErrorType.unknownError, message: message ?? "", title: title ?? "Unknown Error", detail: detail ?? "");
+      : super(
+            type: type ?? ErrorType.unknownError,
+            message: message ?? "",
+            title: title ?? "Unknown Error",
+            detail: detail ?? "Unknown Error occurred. Please send a report. ");
 }
 
 class UnstableNetwork extends DooadexErrors {
-  UnstableNetwork({String? type, String? message, String? title, String? detail})
-      : super(type: type ?? ErrorType.unstableNetwork, message: message ?? "", title: title ?? "Unstable Network", detail: detail ?? "");
+  UnstableNetwork(
+      {String? type, String? message, String? title, String? detail})
+      : super(
+            type: type ?? ErrorType.unstableNetwork,
+            message: message ?? "The network state is not stable.",
+            title: title ?? "Unstable Network",
+            detail: detail ??
+                "The network state is not stable. Please try again later.");
 }

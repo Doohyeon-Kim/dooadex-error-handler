@@ -65,3 +65,29 @@ class RequestTimeoutException extends DooadexException {
     ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.requestTimeout());
   }
 }
+
+class InternalServerErrorException extends DooadexException {
+  @override
+  InternalServerErrorException() : super(DooadexErrors.internalServerError()) {
+    logger(this);
+    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.internalServerError());
+  }
+}class ServiceUnavailableException extends DooadexException {
+  @override
+  ServiceUnavailableException() : super(DooadexErrors.serviceUnavailable()) {
+    logger(this);
+    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.serviceUnavailable());
+  }
+}class UnknownErrorException extends DooadexException {
+  @override
+  UnknownErrorException() : super(DooadexErrors.unknownError()) {
+    logger(this);
+    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.unknownError());
+  }
+}class UnstableNetworkException extends DooadexException {
+  @override
+  UnstableNetworkException() : super(DooadexErrors.unstableNetwork()) {
+    logger(this);
+    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.unstableNetwork());
+  }
+}
