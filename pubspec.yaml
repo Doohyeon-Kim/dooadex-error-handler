@@ -1,6 +1,6 @@
 name: dooadex_error_handler
 description: A useful error handler
-version: 0.0.5
+version: 0.0.6
 repository: "https://github.com/Doohyeon-Kim/dooadex-error-handler.git"
 
 environment:
@@ -8,8 +8,8 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  dooadex_logger: ^0.0.3
-  dooadex_constants: ^0.0.3
+  dooadex_logger: ^0.0.7
+  dooadex_constants: ^0.0.4
   flutter:
     sdk: flutter
 

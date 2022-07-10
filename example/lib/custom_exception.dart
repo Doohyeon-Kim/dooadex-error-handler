@@ -2,13 +2,13 @@
 import 'package:dooadex_error_handler/dooadex_error_handler.dart';
 import 'package:dooadex_logger/dooadex_logger.dart';
 
-class CustomException implements DooadexException {
+class CustomException implements DdxException {
   CustomException(this.dooadexError) {
     logger(this);
   }
 
   @override
-  DooadexError dooadexError;
+  DdxError dooadexError;
 
   @override
   String toString() {
@@ -17,6 +17,6 @@ class CustomException implements DooadexException {
 
   @override
   void logger(Exception dooadexException) {
-    DooadexLogger.exception(dooadexException);
+    DdxLogger.exception(dooadexException);
   }
 }

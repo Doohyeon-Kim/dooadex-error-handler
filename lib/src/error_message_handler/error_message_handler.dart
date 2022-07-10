@@ -5,35 +5,39 @@ import '../constant/constant.dart';
 import '../error/dooadex_error.dart';
 import 'error_message.dart';
 
-class ErrorMessageHandler {
-  static ErrorMessage? _errorMessage;
+class DdxErrorMessageHandler {
+  static DdxErrorMessage? _errorMessage;
 
-  ErrorMessageHandler._();
+  DdxErrorMessageHandler._();
 
   static bool checkErrorMessageExist() => _errorMessage != null ? true : false;
 
-  static setErrorMessage({required DooadexError dooadexError}) {
-    _errorMessage = ErrorMessage(title: dooadexError.title!, detail: dooadexError.detail!);
+  static setErrorMessage({required DdxError dooadexError}) {
+    _errorMessage = DdxErrorMessage(title: dooadexError.title!, detail: dooadexError.detail!);
   }
 
-  static ErrorMessage getErrorMessage() {
+  static DdxErrorMessage getErrorMessage() {
     if (checkErrorMessageExist()) {
       return _errorMessage!;
     } else {
-      return ErrorMessage(title: '', detail: '');
+      return DdxErrorMessage(title: '', detail: '');
     }
   }
 
-  static showError({required BuildContext context, required WidgetType widgetType}) {
+  static showError({required BuildContext context, required WidgetType widgetType, Widget? customErrorDialog}) {
     switch (widgetType) {
       case WidgetType.dialog:
         showDialog<void>(
           context: context,
           barrierDismissible: false,
           builder: (BuildContext dialogContext) {
-            return ErrorDialog(
-                context: context,
-                errorMessage: _errorMessage ?? ErrorMessage(title: "Unknown Error", detail: "Unknown Error Occurred. Please try again later."));
+            return customErrorDialog ??
+                DdxErrorDialog(
+                  context: context,
+                  errorMessage: _errorMessage ??
+                      DdxErrorMessage(
+                          title: "Unknown Error", detail: "Unknown Error Occurred. Please try again later."),
+                );
           },
         );
         return;
@@ -43,9 +47,10 @@ class ErrorMessageHandler {
           context: context,
           barrierDismissible: false,
           builder: (BuildContext dialogContext) {
-            return ErrorDialog(
+            return DdxErrorDialog(
                 context: context,
-                errorMessage: _errorMessage ?? ErrorMessage(title: "Unknown Error", detail: "Unknown Error Occurred. Please try again later."));
+                errorMessage: _errorMessage ??
+                    DdxErrorMessage(title: "Unknown Error", detail: "Unknown Error Occurred. Please try again later."));
           },
         );
         return;

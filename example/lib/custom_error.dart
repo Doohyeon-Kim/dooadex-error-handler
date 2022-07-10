@@ -1,6 +1,6 @@
 import 'package:dooadex_error_handler/dooadex_error_handler.dart';
 
-class CustomError implements DooadexError {
+class CustomError implements DdxError {
   CustomError(this.message);
 
   @override

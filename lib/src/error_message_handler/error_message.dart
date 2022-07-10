@@ -1,6 +1,6 @@
-class ErrorMessage {
+class DdxErrorMessage {
   String title;
   String detail;
 
-  ErrorMessage({required this.title, required this.detail});
+  DdxErrorMessage({required this.title, required this.detail});
 }

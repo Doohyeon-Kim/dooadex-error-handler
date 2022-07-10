@@ -23,14 +23,14 @@ class _ClientError {
 class _ServerError {}
 
 class _HttpError {
-  String badRequest = HttpStatus.reason.badRequest;
-  String unauthorized = HttpStatus.reason.unauthorized;
-  String forbidden = HttpStatus.reason.forbidden;
-  String notFound = HttpStatus.reason.notFound;
-  String requestTimeout = HttpStatus.reason.requestTimeout;
-  String conflict = HttpStatus.reason.conflict;
-  String internalServerError = HttpStatus.reason.internalServerError;
-  String serviceUnavailable = HttpStatus.reason.serviceUnavailable;
+  String badRequest = DdxHttpStatus.reason.badRequest;
+  String unauthorized = DdxHttpStatus.reason.unauthorized;
+  String forbidden = DdxHttpStatus.reason.forbidden;
+  String notFound = DdxHttpStatus.reason.notFound;
+  String requestTimeout = DdxHttpStatus.reason.requestTimeout;
+  String conflict = DdxHttpStatus.reason.conflict;
+  String internalServerError = DdxHttpStatus.reason.internalServerError;
+  String serviceUnavailable = DdxHttpStatus.reason.serviceUnavailable;
 }
 
 

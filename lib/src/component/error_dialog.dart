@@ -4,35 +4,47 @@ import 'package:flutter/material.dart';
 import '../error_message_handler/error_message_handler.dart';
 import '../constant/constant.dart';
 
-class ErrorDialog extends StatelessWidget {
-  const ErrorDialog({Key? key, required this.context, required this.errorMessage}) : super(key: key);
+class DdxErrorDialog extends StatelessWidget {
+  const DdxErrorDialog(
+      {Key? key,
+      required this.context,
+      required this.errorMessage,
+      this.errorTitleTextWidget,
+      this.errorDetailTextWidget,
+      this.buttonText})
+      : super(key: key);
 
   final BuildContext context;
-  final ErrorMessage errorMessage;
+  final DdxErrorMessage errorMessage;
+  final String? buttonText;
+  final Text? errorTitleTextWidget;
+  final Text? errorDetailTextWidget;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('${errorMessage.title} '),
-      content: Text(
-        '${errorMessage.detail} ',
-        // style: ,
-      ),
+      title: errorTitleTextWidget ?? Text('${errorMessage.title} '),
+      content: errorDetailTextWidget ??
+          Text(
+            '${errorMessage.detail} ',
+            // style: ,
+          ),
       actions: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             OutlinedButton(
               onPressed: () {
-                ErrorMessageHandler.flushErrorMessage();
+                DdxErrorMessageHandler.flushErrorMessage();
                 Navigator.of(context).pop(); // Dismiss alert dialog
               },
-              child: const Text("확인"),
+              child: Text(buttonText ?? "Confirm"),
             ),
           ],
         ),
       ],
-      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10))),
     );
   }
 }

@@ -1,5 +1,5 @@
-class DooadexError implements Error{
-  DooadexError({this.type, this.message, this.title, this.detail});
+class DdxError implements Error{
+  DdxError({this.type, this.message, this.title, this.detail});
   final String? type;
   final String? message;
   final String? title;

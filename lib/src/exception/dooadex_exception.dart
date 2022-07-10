@@ -4,10 +4,10 @@ import 'package:dooadex_logger/dooadex_logger.dart';
 import '../error/dooadex_error.dart';
 import 'dooadex_exception_factory.dart';
 
-class DooadexException implements Exception {
-  DooadexException(this.dooadexError);
+class DdxException implements Exception {
+  DdxException(this.dooadexError);
 
-  DooadexError dooadexError;
+  DdxError dooadexError;
 
   @override
   String toString() {
@@ -15,31 +15,31 @@ class DooadexException implements Exception {
   }
 
   void logger(Exception dooadexException) {
-    DooadexLogger.exception(errorMethodCount: 10, dooadexException);
+    DdxLogger.exception(errorMethodCount: 10, dooadexException);
   }
 
-  factory DooadexException.userInputError() = UserInputErrorException;
+  factory DdxException.userInputError() = UserInputErrorException;
 
-  factory DooadexException.invalidFormat() = InvalidFormatException;
+  factory DdxException.invalidFormat() = InvalidFormatException;
 
-  factory DooadexException.badRequest() = BadRequestException;
+  factory DdxException.badRequest() = BadRequestException;
 
-  factory DooadexException.unauthorized() = UnauthorizedException;
+  factory DdxException.unauthorized() = UnauthorizedException;
 
-  factory DooadexException.forbidden() = ForbiddenException;
+  factory DdxException.forbidden() = ForbiddenException;
 
-  factory DooadexException.notFound() = NotFoundException;
+  factory DdxException.notFound() = NotFoundException;
 
-  factory DooadexException.conflict() = ConflictException;
+  factory DdxException.conflict() = ConflictException;
 
-  factory DooadexException.requestTimeout() = RequestTimeoutException;
+  factory DdxException.requestTimeout() = RequestTimeoutException;
 
-  factory DooadexException.internalServerError() = InternalServerErrorException;
+  factory DdxException.internalServerError() = InternalServerErrorException;
 
-  factory DooadexException.serviceUnavailable() = ServiceUnavailableException;
+  factory DdxException.serviceUnavailable() = ServiceUnavailableException;
 
-  factory DooadexException.unknownError() = UnknownErrorException;
+  factory DdxException.unknownError() = UnknownErrorException;
 
-  factory DooadexException.unstableNetwork() = UnstableNetworkException;
+  factory DdxException.unstableNetwork() = UnstableNetworkException;
 
 }

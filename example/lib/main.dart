@@ -16,9 +16,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Dooadex Package Test App',
       theme: ThemeData(
-        primarySwatch: MaterialColor(DooadexColor.primaryMaterialColor.colorHex, DooadexColor.primaryMaterialColor.swatch),
+        primarySwatch: MaterialColor(DdxColor.primaryMaterialColor.colorHex, DdxColor.primaryMaterialColor.swatch),
       ),
       home: const MyHomePage(title: 'Dooadex Home Page'),
     );
@@ -47,15 +48,15 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             ElevatedButton(
               onPressed: () {
-                DooadexException.conflict();
-                ErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
+                DdxException.conflict();
+                DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
               },
               child: const Text("Dooadex Exception"),
             ),
             ElevatedButton(
               onPressed: () {
                 CustomException(CustomError("Custom Error"));
-                ErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
+                DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
               },
               child: const Text("Custom Exception"),
             ),

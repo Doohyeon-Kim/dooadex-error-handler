@@ -2,92 +2,92 @@ import '../error/dooadex_errors.dart';
 import '../error_message_handler/error_message_handler.dart';
 import 'dooadex_exception.dart';
 
-class UserInputErrorException extends DooadexException {
+class UserInputErrorException extends DdxException {
   @override
-  UserInputErrorException() : super(DooadexErrors.userInputError()) {
+  UserInputErrorException() : super(DdxErrors.userInputError()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.userInputError());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.userInputError());
   }
 }
 
-class InvalidFormatException extends DooadexException {
+class InvalidFormatException extends DdxException {
   @override
-  InvalidFormatException() : super(DooadexErrors.invalidFormat()) {
+  InvalidFormatException() : super(DdxErrors.invalidFormat()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.invalidFormat());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.invalidFormat());
   }
 }
 
-class BadRequestException extends DooadexException {
+class BadRequestException extends DdxException {
   @override
-  BadRequestException() : super(DooadexErrors.badRequest()) {
+  BadRequestException() : super(DdxErrors.badRequest()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.badRequest());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.badRequest());
   }
 }
 
-class UnauthorizedException extends DooadexException {
+class UnauthorizedException extends DdxException {
   @override
-  UnauthorizedException() : super(DooadexErrors.unauthorized()) {
+  UnauthorizedException() : super(DdxErrors.unauthorized()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.unauthorized());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.unauthorized());
   }
 }
 
-class ForbiddenException extends DooadexException {
+class ForbiddenException extends DdxException {
   @override
-  ForbiddenException() : super(DooadexErrors.forbidden()) {
+  ForbiddenException() : super(DdxErrors.forbidden()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.forbidden());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.forbidden());
   }
 }
 
-class NotFoundException extends DooadexException {
+class NotFoundException extends DdxException {
   @override
-  NotFoundException() : super(DooadexErrors.notFound()) {
+  NotFoundException() : super(DdxErrors.notFound()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.notFound());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.notFound());
   }
 }
 
-class ConflictException extends DooadexException {
+class ConflictException extends DdxException {
   @override
-  ConflictException() : super(DooadexErrors.conflict()) {
+  ConflictException() : super(DdxErrors.conflict()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.conflict());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.conflict());
   }
 }
 
-class RequestTimeoutException extends DooadexException {
+class RequestTimeoutException extends DdxException {
   @override
-  RequestTimeoutException() : super(DooadexErrors.requestTimeout()) {
+  RequestTimeoutException() : super(DdxErrors.requestTimeout()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.requestTimeout());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.requestTimeout());
   }
 }
 
-class InternalServerErrorException extends DooadexException {
+class InternalServerErrorException extends DdxException {
   @override
-  InternalServerErrorException() : super(DooadexErrors.internalServerError()) {
+  InternalServerErrorException() : super(DdxErrors.internalServerError()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.internalServerError());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.internalServerError());
   }
-}class ServiceUnavailableException extends DooadexException {
+}class ServiceUnavailableException extends DdxException {
   @override
-  ServiceUnavailableException() : super(DooadexErrors.serviceUnavailable()) {
+  ServiceUnavailableException() : super(DdxErrors.serviceUnavailable()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.serviceUnavailable());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.serviceUnavailable());
   }
-}class UnknownErrorException extends DooadexException {
+}class UnknownErrorException extends DdxException {
   @override
-  UnknownErrorException() : super(DooadexErrors.unknownError()) {
+  UnknownErrorException() : super(DdxErrors.unknownError()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.unknownError());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.unknownError());
   }
-}class UnstableNetworkException extends DooadexException {
+}class UnstableNetworkException extends DdxException {
   @override
-  UnstableNetworkException() : super(DooadexErrors.unstableNetwork()) {
+  UnstableNetworkException() : super(DdxErrors.unstableNetwork()) {
     logger(this);
-    ErrorMessageHandler.setErrorMessage(dooadexError: DooadexErrors.unstableNetwork());
+    DdxErrorMessageHandler.setErrorMessage(dooadexError: DdxErrors.unstableNetwork());
   }
 }

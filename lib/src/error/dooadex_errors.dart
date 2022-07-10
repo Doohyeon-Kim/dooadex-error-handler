@@ -1,8 +1,8 @@
 import 'dooadex_error.dart';
 import 'dooadex_error_factory.dart';
 
-class DooadexErrors implements DooadexError {
-  DooadexErrors({this.type, this.message, this.title, this.detail});
+class DdxErrors implements DdxError {
+  DdxErrors({this.type, this.message, this.title, this.detail});
 
   @override
   final String? type;
@@ -22,27 +22,27 @@ class DooadexErrors implements DooadexError {
   // TODO: implement stackTrace
   StackTrace? get stackTrace => throw UnimplementedError();
 
-  factory DooadexErrors.userInputError({String? type, String? message, String? title, String? detail}) = UserInputError;
+  factory DdxErrors.userInputError({String? type, String? message, String? title, String? detail}) = UserInputError;
 
-  factory DooadexErrors.invalidFormat({String? type, String? message, String? title, String? detail}) = InvalidFormat;
+  factory DdxErrors.invalidFormat({String? type, String? message, String? title, String? detail}) = InvalidFormat;
 
-  factory DooadexErrors.badRequest({String? type, String? message, String? title, String? detail}) = BadRequest;
+  factory DdxErrors.badRequest({String? type, String? message, String? title, String? detail}) = BadRequest;
 
-  factory DooadexErrors.unauthorized({String? type, String? message, String? title, String? detail}) = Unauthorized;
+  factory DdxErrors.unauthorized({String? type, String? message, String? title, String? detail}) = Unauthorized;
 
-  factory DooadexErrors.forbidden({String? type, String? message, String? title, String? detail}) = Forbidden;
+  factory DdxErrors.forbidden({String? type, String? message, String? title, String? detail}) = Forbidden;
 
-  factory DooadexErrors.notFound({String? type, String? message, String? title, String? detail}) = NotFound;
+  factory DdxErrors.notFound({String? type, String? message, String? title, String? detail}) = NotFound;
 
-  factory DooadexErrors.conflict({String? type, String? message, String? title, String? detail}) = Conflict;
+  factory DdxErrors.conflict({String? type, String? message, String? title, String? detail}) = Conflict;
 
-  factory DooadexErrors.requestTimeout({String? type, String? message, String? title, String? detail}) = RequestTimeout;
+  factory DdxErrors.requestTimeout({String? type, String? message, String? title, String? detail}) = RequestTimeout;
 
-  factory DooadexErrors.internalServerError({String? type, String? message, String? title, String? detail}) = InternalServerError;
+  factory DdxErrors.internalServerError({String? type, String? message, String? title, String? detail}) = InternalServerError;
 
-  factory DooadexErrors.serviceUnavailable({String? type, String? message, String? title, String? detail}) = ServiceUnavailable;
+  factory DdxErrors.serviceUnavailable({String? type, String? message, String? title, String? detail}) = ServiceUnavailable;
 
-  factory DooadexErrors.unknownError({String? type, String? message, String? title, String? detail}) = UnknownError;
+  factory DdxErrors.unknownError({String? type, String? message, String? title, String? detail}) = UnknownError;
 
-  factory DooadexErrors.unstableNetwork({String? type, String? message, String? title, String? detail}) = UnstableNetwork;
+  factory DdxErrors.unstableNetwork({String? type, String? message, String? title, String? detail}) = UnstableNetwork;
 }
