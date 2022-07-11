@@ -1,4 +1,4 @@
-class DdxError implements Error{
+class DdxError extends Error{
   DdxError({this.type, this.message, this.title, this.detail});
   final String? type;
   final String? message;
@@ -6,6 +6,7 @@ class DdxError implements Error{
   final String? detail;
 
   @override
-  // TODO: implement stackTrace
-  StackTrace? get stackTrace => throw UnimplementedError();
+  String toString() {
+    return "[DdxError]\ntype: $type\nmessage: $message\ntitle: $title\ndetail: detail";
+  }
 }

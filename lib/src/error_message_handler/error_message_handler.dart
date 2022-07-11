@@ -12,8 +12,8 @@ class DdxErrorMessageHandler {
 
   static bool checkErrorMessageExist() => _errorMessage != null ? true : false;
 
-  static setErrorMessage({required DdxError dooadexError}) {
-    _errorMessage = DdxErrorMessage(title: dooadexError.title!, detail: dooadexError.detail!);
+  static setErrorMessage({required DdxError ddxError}) {
+    _errorMessage = DdxErrorMessage(title: ddxError.title!, detail: ddxError.detail!);
   }
 
   static DdxErrorMessage getErrorMessage() {

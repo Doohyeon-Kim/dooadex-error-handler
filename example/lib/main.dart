@@ -55,6 +55,17 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
+                try {
+                  occurError();
+                } on DdxException catch (error) {
+                  error.printError();
+                  DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
+                }
+              },
+              child: const Text("Dooadex Exception with whole error message."),
+            ),
+            ElevatedButton(
+              onPressed: () {
                 CustomException(CustomError("Custom Error"));
                 DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
               },
@@ -65,4 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+DdxError occurError() {
+  throw DdxException.conflict();
 }

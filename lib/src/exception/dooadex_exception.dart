@@ -5,13 +5,17 @@ import '../error/dooadex_error.dart';
 import 'dooadex_exception_factory.dart';
 
 class DdxException implements Exception {
-  DdxException(this.dooadexError);
+  DdxException(this.ddxError);
 
-  DdxError dooadexError;
+  DdxError ddxError;
 
   @override
   String toString() {
-    return "${"${dooadexError.runtimeType}Exception"}: ${dooadexError.message ?? ""}";
+    return "${"${ddxError.runtimeType}Exception"}: ${ddxError.message ?? ""}";
+  }
+
+  void printError(){
+     DdxLogger.error(ddxError);
   }
 
   void logger(Exception dooadexException) {
