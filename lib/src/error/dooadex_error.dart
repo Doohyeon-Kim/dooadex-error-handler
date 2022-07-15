@@ -7,6 +7,6 @@ class DdxError extends Error{
 
   @override
   String toString() {
-    return "[DdxError]\ntype: $type\nmessage: $message\ntitle: $title\ndetail: detail";
+    return "type: $type\nmessage: $message\ntitle: $title\ndetail: detail";
   }
 }

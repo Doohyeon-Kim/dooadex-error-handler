@@ -48,21 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             ElevatedButton(
               onPressed: () {
-                DdxException.conflict();
-                DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
-              },
-              child: const Text("Dooadex Exception"),
-            ),
-            ElevatedButton(
-              onPressed: () {
                 try {
                   occurError();
                 } on DdxException catch (error) {
-                  error.printError();
                   DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
                 }
               },
-              child: const Text("Dooadex Exception with whole error message."),
+              child: const Text("Dooadex Exception"),
             ),
             ElevatedButton(
               onPressed: () {
