@@ -49,8 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 try {
-                  occurError();
-                } on DdxException catch (error) {
+                  DdxError ddxError = DdxErrors.conflict();
+                  throw DdxException(ddxError);
+                } on DdxException {
                   DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
                 }
               },
@@ -58,8 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                CustomException(CustomError("Custom Error"));
-                DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
+                try {
+                  DdxError ddxError = CustomError("Custom Error");
+                  throw CustomException(ddxError);
+                } on CustomException {
+                  DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
+                }
               },
               child: const Text("Custom Exception"),
             ),
@@ -68,8 +73,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-}
-
-DdxError occurError() {
-  throw DdxException.conflict();
 }

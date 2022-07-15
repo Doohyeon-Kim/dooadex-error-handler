@@ -5,7 +5,10 @@ import '../error/dooadex_error.dart';
 import 'dooadex_exception_factory.dart';
 
 class DdxException implements Exception {
-  DdxException(this.ddxError);
+  DdxException(this.ddxError){
+   printErrorLog();
+   printExceptionLog(this);
+  }
 
   DdxError ddxError;
 
@@ -18,8 +21,8 @@ class DdxException implements Exception {
      DdxLogger.error(ddxError);
   }
 
-  void printExceptionLog(Exception dooadexException) {
-    DdxLogger.exception(errorMethodCount: 10, dooadexException);
+  void printExceptionLog(Exception ddxException) {
+    DdxLogger.exception(errorMethodCount: 10, ddxException);
   }
 
   factory DdxException.userInputError({DdxError? ddxError}) = UserInputErrorException;
