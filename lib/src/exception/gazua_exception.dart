@@ -2,12 +2,14 @@
 import 'package:gazua_logger/gazua_logger.dart';
 
 import '../error/gazua_error.dart';
+import '../error_message_handler/gazua_message_handler.dart';
 import 'gazua_exception_factory.dart';
 
 class GzException implements Exception {
   GzException(this.gzError){
    printErrorLog();
    printExceptionLog(this);
+   GzErrorMessageHandler.setErrorMessage(gzError: gzError);
   }
 
   GzError gzError;

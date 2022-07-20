@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.0.2
 
-Package name changed from dooadex_error_handler to gazua_error_handler
+Add automatic error message set
