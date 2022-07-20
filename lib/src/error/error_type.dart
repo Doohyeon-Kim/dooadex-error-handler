@@ -1,6 +1,3 @@
-// ignore: depend_on_referenced_packages
-import 'package:dooadex_constants/dooadex_constants.dart';
-
 class ErrorType {
   // ignore: library_private_types_in_public_api
   static _ClientError client = _ClientError();
@@ -23,14 +20,12 @@ class _ClientError {
 class _ServerError {}
 
 class _HttpError {
-  String badRequest = DdxHttpStatus.reason.badRequest;
-  String unauthorized = DdxHttpStatus.reason.unauthorized;
-  String forbidden = DdxHttpStatus.reason.forbidden;
-  String notFound = DdxHttpStatus.reason.notFound;
-  String requestTimeout = DdxHttpStatus.reason.requestTimeout;
-  String conflict = DdxHttpStatus.reason.conflict;
-  String internalServerError = DdxHttpStatus.reason.internalServerError;
-  String serviceUnavailable = DdxHttpStatus.reason.serviceUnavailable;
+  String badRequest = "Bad Request";
+  String unauthorized = "Unauthorized";
+  String forbidden = "Forbidden";
+  String notFound = "Not Found";
+  String requestTimeout = "Request Timeout";
+  String conflict = "Conflict";
+  String internalServerError = "Internal Server Error";
+  String serviceUnavailable = "Service Unavailable";
 }
-
-

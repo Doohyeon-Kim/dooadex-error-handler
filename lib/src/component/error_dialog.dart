@@ -1,11 +1,11 @@
-import 'package:dooadex_error_handler/src/error_message_handler/error_message.dart';
+import 'package:gazua_error_handler/src/error_message_handler/gazua_message.dart';
 import 'package:flutter/material.dart';
 
-import '../error_message_handler/error_message_handler.dart';
+import '../error_message_handler/gazua_message_handler.dart';
 import '../constant/constant.dart';
 
-class DdxErrorDialog extends StatelessWidget {
-  const DdxErrorDialog(
+class GzErrorDialog extends StatelessWidget {
+  const GzErrorDialog(
       {Key? key,
       required this.context,
       required this.errorMessage,
@@ -15,7 +15,7 @@ class DdxErrorDialog extends StatelessWidget {
       : super(key: key);
 
   final BuildContext context;
-  final DdxErrorMessage errorMessage;
+  final GzErrorMessage errorMessage;
   final String? buttonText;
   final Text? errorTitleTextWidget;
   final Text? errorDetailTextWidget;
@@ -35,7 +35,7 @@ class DdxErrorDialog extends StatelessWidget {
           children: [
             OutlinedButton(
               onPressed: () {
-                DdxErrorMessageHandler.flushErrorMessage();
+                GzErrorMessageHandler.flushErrorMessage();
                 Navigator.of(context).pop(); // Dismiss alert dialog
               },
               child: Text(buttonText ?? "Confirm"),

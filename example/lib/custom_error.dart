@@ -1,6 +1,6 @@
-import 'package:dooadex_error_handler/dooadex_error_handler.dart';
+import 'package:gazua_error_handler/gazua_error_handler.dart';
 
-class CustomError implements DdxError {
+class CustomError implements GzError {
   CustomError(this.message);
 
   @override

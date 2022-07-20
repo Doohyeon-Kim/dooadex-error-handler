@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 
 import '../component/error_dialog.dart';
 import '../constant/constant.dart';
-import '../error/dooadex_error.dart';
-import 'error_message.dart';
+import '../error/gazua_error.dart';
+import 'gazua_message.dart';
 
-class DdxErrorMessageHandler {
-  static DdxErrorMessage? _errorMessage;
+class GzErrorMessageHandler {
+  static GzErrorMessage? _errorMessage;
 
-  DdxErrorMessageHandler._();
+  GzErrorMessageHandler._();
 
   static bool checkErrorMessageExist() => _errorMessage != null ? true : false;
 
-  static setErrorMessage({required DdxError ddxError}) {
-    _errorMessage = DdxErrorMessage(title: ddxError.title!, detail: ddxError.detail!);
+  static setErrorMessage({required GzError gzError}) {
+    _errorMessage = GzErrorMessage(title: gzError.title!, detail: gzError.detail!);
   }
 
-  static DdxErrorMessage getErrorMessage() {
+  static GzErrorMessage getErrorMessage() {
     if (checkErrorMessageExist()) {
       return _errorMessage!;
     } else {
-      return DdxErrorMessage(title: '', detail: '');
+      return GzErrorMessage(title: '', detail: '');
     }
   }
 
@@ -32,10 +32,10 @@ class DdxErrorMessageHandler {
           barrierDismissible: false,
           builder: (BuildContext dialogContext) {
             return customErrorDialog ??
-                DdxErrorDialog(
+                GzErrorDialog(
                   context: context,
                   errorMessage: _errorMessage ??
-                      DdxErrorMessage(
+                      GzErrorMessage(
                           title: "Unknown Error", detail: "Unknown Error Occurred. Please try again later."),
                 );
           },
@@ -47,10 +47,10 @@ class DdxErrorMessageHandler {
           context: context,
           barrierDismissible: false,
           builder: (BuildContext dialogContext) {
-            return DdxErrorDialog(
+            return GzErrorDialog(
                 context: context,
                 errorMessage: _errorMessage ??
-                    DdxErrorMessage(title: "Unknown Error", detail: "Unknown Error Occurred. Please try again later."));
+                    GzErrorMessage(title: "Unknown Error", detail: "Unknown Error Occurred. Please try again later."));
           },
         );
         return;

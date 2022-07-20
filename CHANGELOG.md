@@ -1,3 +1,3 @@
-## 0.1.1
+## 0.0.1
 
-Improve DdxException.
+Package name changed from dooadex_error_handler to gazua_error_handler

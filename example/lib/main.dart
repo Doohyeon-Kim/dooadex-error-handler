@@ -1,7 +1,7 @@
-import 'package:dooadex_error_handler/dooadex_error_handler.dart';
-import 'package:dooadex_logger/dooadex_logger.dart';
-import 'package:dooadex_palette/dooadex_palette.dart';
+
+import 'package:gazua_error_handler/gazua_error_handler.dart';
 import 'package:flutter/material.dart';
+import 'package:twostrings_palette/twostrings_palette.dart';
 
 import 'custom_error.dart';
 import 'custom_exception.dart';
@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Dooadex Package Test App',
+      title: 'Two Strings Package Test App',
       theme: ThemeData(
-        primarySwatch: MaterialColor(DdxColor.primaryMaterialColor.colorHex, DdxColor.primaryMaterialColor.swatch),
+        primarySwatch: MaterialColor(TwoStringsColor.primaryMaterialColor.colorHex, TwoStringsColor.primaryMaterialColor.swatch),
       ),
-      home: const MyHomePage(title: 'Dooadex Home Page'),
+      home: const MyHomePage(title: 'Two Strings Home Page'),
     );
   }
 }
@@ -49,21 +49,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 try {
-                  DdxError ddxError = DdxErrors.conflict();
-                  throw DdxException(ddxError);
-                } on DdxException {
-                  DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
+                  GzError gzError = GzErrors.conflict();
+                  throw GzException(gzError);
+                } on GzException {
+                  GzErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
                 }
               },
-              child: const Text("Dooadex Exception"),
+              child: const Text("Gazua Exception"),
             ),
             ElevatedButton(
               onPressed: () {
                 try {
-                  DdxError ddxError = CustomError("Custom Error");
-                  throw CustomException(ddxError);
+                  GzError gzError = CustomError("Custom Error");
+                  throw CustomException(gzError);
                 } on CustomException {
-                  DdxErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
+                  GzErrorMessageHandler.showError(context: context, widgetType: WidgetType.dialog);
                 }
               },
               child: const Text("Custom Exception"),
